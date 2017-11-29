@@ -1,0 +1,13 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: microservice-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xiaobob/study
+          search-paths: config-repo
+          username: 844854626@qq.com
+          password: ren844854626
