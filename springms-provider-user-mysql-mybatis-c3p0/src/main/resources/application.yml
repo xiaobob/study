@@ -2,7 +2,7 @@ server:
   port: 8325
 spring:
   application:
-    name: springms-provider-user-mysql-mybatis  #全部小写
+    name: springms-provider-user-mysql-c3p0  #全部小写
 
 
 #####################################################################################################
