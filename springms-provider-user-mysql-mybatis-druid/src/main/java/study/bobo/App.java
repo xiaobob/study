@@ -33,11 +33,11 @@ public class App {
 		servletRegistrationBean.addUrlMappings("/druid/*");
 		return servletRegistrationBean;
 	}
-//	
-//	/**
-//	 * 注册druidFileter拦截
-//	 * 
-//	 */
+	
+	/**
+	 * 注册druidFileter拦截
+	 * 
+	 */
 	@Bean
 	public FilterRegistrationBean druidFilterRegistrationBean(){
 		FilterRegistrationBean filterRegistrationBean=new FilterRegistrationBean();
