@@ -1,4 +1,4 @@
-package test.ren.domain.controller;
+package test.ren.controller;
 
 import java.util.List;
 
