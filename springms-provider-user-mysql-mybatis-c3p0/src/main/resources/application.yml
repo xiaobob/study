@@ -1,0 +1,47 @@
+server:
+  port: 8325
+spring:
+  application:
+    name: springms-provider-user-mysql-mybatis  #全部小写
+
+
+#####################################################################################################
+# mysql 属性配置
+  jpa:
+    hibernate:
+      #ddl-auto: create #ddl-auto:设为create表示每次都重新建表
+      ddl-auto: create #ddl-auto:设为update表示每次都不会重新建表
+    show-sql: true
+#####################################################################################################
+
+
+#####################################################################################################
+c3p0:
+  driverClass: com.mysql.jdbc.Driver
+  jdbcUrl: jdbc:mysql:///springcloud?characterEncoding=utf8&useSSL=true
+  user: root
+  password: 123456
+  minPoolSize: 2
+  maxPoolSize: 10
+  maxIdleTime: 1800000
+  acquireIncrement: 3
+  maxStatements: 1000
+  initialPoolSize: 3
+  idleConnectionTestPeriod: 30
+  acquireRetryAttempts: 30
+  acquireRetryDelay: 1000
+  breakAfterAcquireFailure: false
+  testConnectionOnCheckout: false
+#####################################################################################################
+
+
+#####################################################################################################
+# 打印日志
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.springms: DEBUG
+#####################################################################################################
