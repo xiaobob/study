@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 
+
 @SpringBootApplication
 @MapperScan("study.bobo.mapper.**")
 public class App {
@@ -21,16 +22,17 @@ public class App {
 		SpringApplication.run(App.class, args);
 	}
 	
-//	
-//	/**
-//	 * 注册DruidServlet
-//	 * 
-//	 */
+	/**
+	 * 注册DruidServlet
+	 * 
+	 */
 	@Bean
 	public ServletRegistrationBean druidServletRegistrationBean(){
 		ServletRegistrationBean servletRegistrationBean=new ServletRegistrationBean();
 		servletRegistrationBean.setServlet(new StatViewServlet());
 		servletRegistrationBean.addUrlMappings("/druid/*");
+		servletRegistrationBean.setName("druidStatViewServlet");
+		servletRegistrationBean.addInitParameter("resetEnable", "false");  
 		return servletRegistrationBean;
 	}
 	
@@ -42,6 +44,7 @@ public class App {
 	public FilterRegistrationBean druidFilterRegistrationBean(){
 		FilterRegistrationBean filterRegistrationBean=new FilterRegistrationBean();
 		filterRegistrationBean.setFilter(new WebStatFilter());
+		filterRegistrationBean.setName("druidWebStatFilter");
 		Map<String, String> initParameters=new HashMap<>();
 		initParameters.put("exclusions", "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*");
 		filterRegistrationBean.setInitParameters(initParameters);
