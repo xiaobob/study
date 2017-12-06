@@ -21,7 +21,7 @@ spring:
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy #映射字段策略
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
+        dialect: org.hibernate.dialect.MySQL5Dialect #mysql方言
 #####################################################################################################
 
 
