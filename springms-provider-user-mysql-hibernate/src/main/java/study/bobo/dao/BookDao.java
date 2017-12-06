@@ -16,7 +16,7 @@ public interface BookDao extends CrudRepository<Book, Long>{
 	
 	Book findOne(Long id);
 	
-	 Book save(Book book);
+	Book save(Book book);
 	
 	List<Book> findAll();
 	
